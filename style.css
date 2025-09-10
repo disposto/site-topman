@@ -196,6 +196,8 @@ i {
 }
 .about {
   background-color: #06121e;
+  overflow: hidden;
+  color: #ffffff;
 }
 
 body {
