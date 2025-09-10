@@ -1,6 +1,7 @@
 .container {
     margin: 0 auto;
     max-width: 1440px;
+    padding: 0 8px;
 }
 
 .bg-home {
@@ -11,7 +12,7 @@
     content: '';
     display: block;
     position: absolute;
-    background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url(../assets/bg.svg);
+    background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url(assets/paifumaca.jpg.png);
     left: 0;
     top: 0;
     width: 100%;
@@ -19,9 +20,106 @@
     z-index: -1;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 0;
+    background-position: center center;
     opacity: 0.9;
 }
 
 //-----------------------------------------------------------------------
 
+.hero {
+    color: $white-normal;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+
+    h1 {
+        text-align: center;
+        line-height: 150%;
+        max-width: 940px;
+        font-size: 46px;
+        font-weight: 600;
+    }
+
+    p {
+        text-align: center;
+        margin: 14px 0;
+        font-size: 1.2em;
+    }
+}
+
+.button-contact {
+  padding: 14px 28px;
+  color: $white-normal;
+  background-color: $red-normal;
+  border: 0;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 14px 0;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255,255,255,0.2) 0%,
+      rgba(255,255,255,0.5) 50%,
+      rgba(255,255,255,0.2) 100%
+    );
+    transform: skewX(-20deg);
+    transition: all 0.5s ease;
+  }
+
+  &:hover::after {
+    left: 100%;
+    transition: all 0.5s ease;
+  }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .hero {
+        min-height: 60vh;
+    }
+
+    h1 {
+        font-size: 34px;
+        padding: 0 14px;
+        width: 100%;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .hero {
+        h1 {
+            font-size: 24px;
+        }
+    }
+}
+
+// ---------------------------------------------
+
+
+// about ---------------------------------------
+
+.about {
+    background-color: $primary-normal;
+}
