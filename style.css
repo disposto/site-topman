@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -144,7 +145,7 @@ i {
 .hero p {
   text-align: center;
   margin: 14px 0;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 .button-contact {
@@ -180,23 +181,19 @@ i {
   .hero {
     min-height: 60vh;
   }
-
   h1 {
     font-size: 34px;
     padding: 0 14px;
     width: 100%;
   }
-
   p {
     font-size: 14px;
   }
-  
 }
 @media screen and (max-width: 480px) {
   .hero h1 {
     font-size: 24px;
   }
-
 }
 .about {
   background-color: #06121e;
@@ -231,6 +228,42 @@ i {
   .about-description .about-content {
     flex-direction: column;
   }
+}
+
+.services {
+  background-color: #ffffff;
+  color: #232224;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 54px 14px;
+}
+
+.services-content h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 14px;
+}
+
+.services-content p {
+  line-height: 150%;
+  margin-bottom: 14px;
+  text-align: center;
+  max-width: 780px;
+}
+
+.haircuts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.haircut img {
+  aspect-ratio: 1/1; /* força quadrado */
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body {
