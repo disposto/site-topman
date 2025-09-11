@@ -96,7 +96,8 @@
     }
 
     h1 {
-        font-size: 34px;
+        font-weight: normal;
+        font-size: 20px;
         padding: 0 14px;
         width: 100%;
     }
@@ -163,65 +164,243 @@
 
  // services -------------------------------------------------
 
- .services {
-    background-color: $white-normal;
-    color: $black-normal;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 54px 14px;
+// services -------------------------------------------------
+
+.services {
+  background-color: $white-normal;
+  color: $black-normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 54px 14px;
 }
 
 .services-content h2 {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 14px;
 }
 
 .services-content p {
-    line-height: 150%;
-    margin-bottom: 14px;
-    text-align: center;
-    max-width: 780px;
+  line-height: 150%;
+  margin-bottom: 14px;
+  text-align: center;
+  max-width: 780px;
 }
 
 .haircuts {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    padding: 0 44px 34px 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 0 44px 34px 44px;
+  overflow: hidden;
 }
 
 .haircut {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: $white-normal;
-    border-radius: 8px;
-    box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.5);
-
-    overflow: hidden;
-
-
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: $white-normal;
+  border-radius: 8px;
+  box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* impede imagem de sair do card */
 }
 
 .haircut img {
-  aspect-ratio: 1 / 1; /* força quadrado */
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .haircut img:hover {
-  transform: scale(1.05); /* aumenta levemente */
-  transition: transform 0.3s ease;
+  transform: scale(1.08); /* zoom suave */
+  filter: brightness(1.1) contrast(1.05); /* realce de cor */
 }
 
 .haircut-info {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 14px;
-    background-color: $white-normal;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  background-color: $white-normal;
+  z-index: 9;
 }
+
+.haircut-info button {
+  background-color: $red-normal;
+  color: $white-normal;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Sora', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: darken($red-normal, 7%); // só escurece um pouco
+  }
+
+  &:active {
+    transform: scale(0.97); // feedback rápido, sem "3D"
+  }
+}
+
+
+@media screen and (max-width: 768px){
+    .haircuts {
+        flex-direction: column;
+    }
+}
+
+
+
+
+/* Barber Section */
+.barbeiros {
+  background-color: $white-normal;
+  color: $black-normal;
+  padding: 54px 14px;
+  text-align: center;
+
+  h2 {
+    font-size: 38px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  p {
+    line-height: 1.5;
+    margin-bottom: 40px;
+    max-width: 780px;
+    color: rgba(0,0,0,0.7);
+  }
+}
+
+.cortadores-de-cabelo {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.barber {
+  flex: 0 0 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px); /* leve elevação */
+  }
+
+  img {
+    width: 180px;
+    height: 230px; /* mais alta que larga */
+    object-fit: cover;
+    border-radius: 7px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(1.05) contrast(1.03);
+    }
+  }
+
+  .barber-info {
+    margin-top: 12px; /* fica fora da imagem */
+    text-align: center;
+
+    strong {
+      display: block;
+      font-size: 16px;
+      color: $black-normal;
+      margin-bottom: 2px;
+    }
+
+    span {
+      font-size: 13px;
+      color: rgba(0,0,0,0.65);
+    }
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .barber {
+    flex: 0 0 140px;
+
+    img {
+      width: 140px;
+      height: 180px;
+    }
+  }
+}
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 0;
+    gap: 24px;
+    color: $white-normal;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 8px;
+}
+
+.footer-icons a i {
+    transition: transform 0.6s cubic-bezier(0.22, 1.5, 0.36, 1);
+    display: inline-block;
+}
+
+.footer-icons a:hover i {
+    transform: translateY(-8px) scale(1.15);
+    background: linear-gradient(
+        90deg,
+        $red-light,
+        $red-dark,
+        $red-light
+    );
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: redFlower 2s ease-in-out infinite;
+}
+
+@keyframes redFlower {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+// Whatsapp Button
+
+img#zap {
+  position: fixed;
+  bottom: 16px;
+  right: 24px;
+  z-index: 99;
+  max-width: 80px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  &:hover {
+    transform: scale(1.15);
+    filter: brightness(1.1);
+  }
+}
+

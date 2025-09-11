@@ -39,7 +39,9 @@
             <main class="hero container">
                 <h1>ESTILO É UM REFLEXO DA SUA ATITUDE E SUA PERSONALIDADE.</h1>
                 <p>Horário de funcionamento: 08:00 ás 20:00</p>
-                <a href="https://wa.me/5566999295189?text=Oi,%20vim%20pelo%20site%20e%20quero%20agendar%20meu%20hor%C3%A1rio." class="button-contact" target="_blank">
+                <a href="https://wa.me/5566999295189?text=Oi,%20vim%20pelo%20site%20e%20quero%20agendar%20meu%20hor%C3%A1rio." class="button-contact"
+                 target="_blank" 
+                 onclick="redirectWithDelay(event, this.href, 500)">
                     Agendar horário
                 </a>
             </main>
@@ -101,5 +103,97 @@
         </div>
     </section>
 
+    <div class="services">
+        <h2>Venha Conhecer</h2>
+    </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.283502326762!2d-54.61207922393606!3d-16.461176339729057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9379c9f4012734b9%3A0x9e5a20cec58e1427!2sBARBEARIA%20TOP%20MAN%20%7C%20Fade%2C%20Navalhado%20e%20Estilo%20%7C%20Jardim%20Participa%C3%A7%C3%A3o.!5e0!3m2!1spt-BR!2sbr!4v1757596474860!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="no" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <section class="barbeiros">
+        <div class="barbeiros-content container">
+            <h2>Nossos Barbeiros</h2>
+        </div>
+            
+           <div class="cortadores-de-cabelo container">
+                <div class="barber">
+                    <img src="assets/corte1.png" alt="Barbeiro 1">
+                    <div class="barber-info">
+                    <strong>Barbeiro x</strong>
+                    <span>Especialista em cortes clássicos</span>
+                    </div>
+                </div>
+                
+                <div class="barber">
+                    <img src="assets/corte1.png" alt="Barbeiro 2">
+                    <div class="barber-info">
+                    <strong>Barbeiro y</strong>
+                    <span>Fade e navalhado profissional</span>
+                    </div>
+                </div>
+                
+                <div class="barber">
+                    <img src="assets/corte1.png" alt="Barbeiro 3">
+                    <div class="barber-info">
+                    <strong>Barbeiro z</strong>
+                    <span>Cortes modernos e design de barba</span>
+                    </div>
+                </div>
+                
+                <div class="barber">
+                    <img src="assets/corte1.png" alt="Barbeiro 4">
+                    <div class="barber-info">
+                    <strong>Barbeiro w</strong>
+                    <span>Especialista em navalhados e estilo</span>
+                    </div>
+                </div>
+                
+                <div class="barber">
+                    <img src="assets/corte1.png" alt="Barbeiro 5">
+                    <div class="barber-info">
+                    <strong>Barbeiro v</strong>
+                    <span>Atendimento premium e cortes modernos</span>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+
+    </section>
+
+    <footer class="footer">
+                <div class="footer-icons">
+                    <a href="https://www.instagram.com/barbertopman/" target="_blank"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                    <a href="https://www.facebook.com/barbertopman" target="_blank"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                    <a href="https://wa.me/5566999295189?text=Ol%C3%A1,%20vim%20pelo%20site%20e%20quero%20*como%20funciona.*" target="_blank"><i class="fa-brands fa-whatsapp fa-2x"></i></a>
+                </div>
+
+                <div>
+                    <img src="assets/logo-barbearia.svg" alt="Logo Barbearia">
+
+                    <p>Copyright 2025 | Top Man Barbearia - Todos direitos reservados.</p>
+                </div>
+            </footer>
+
+            <a href="https://wa.me/5566999295189?text=Ol%C3%A1,%20vim%20pelo%20site%20e%20quero%20*como%20funciona.*" 
+            class=""
+            target="_blank"
+            >
+                <img src="assets/whatssapp.svg" alt="Botão Whatsapp" id="zap">
+            </a>
+
+<script>
+  function redirectWithDelay(event, url, delay = 2000) {
+    event.preventDefault(); // impede o clique de redirecionar na hora
+
+    const el = event.currentTarget;
+    el.classList.add("loading"); // aplica classe enquanto espera
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, delay);
+  }
+</script>
+
+</script>
 </body>
 </html>

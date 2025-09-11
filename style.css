@@ -182,7 +182,8 @@ i {
     min-height: 60vh;
   }
   h1 {
-    font-size: 34px;
+    font-weight: normal;
+    font-size: 20px;
     padding: 0 14px;
     width: 100%;
   }
@@ -260,6 +261,7 @@ i {
   align-items: center;
   gap: 16px;
   padding: 0 44px 34px 44px;
+  overflow: hidden;
 }
 
 .haircut {
@@ -269,18 +271,19 @@ i {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  overflow: hidden; /* impede imagem de sair do card */
 }
 
 .haircut img {
-  aspect-ratio: 1/1; /* força quadrado */
+  aspect-ratio: 1/1;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .haircut img:hover {
-  transform: scale(1.05); /* aumenta levemente */
-  transition: transform 0.3s ease;
+  transform: scale(1.08); /* zoom suave */
+  filter: brightness(1.1) contrast(1.05); /* realce de cor */
 }
 
 .haircut-info {
@@ -289,6 +292,156 @@ i {
   justify-content: space-between;
   padding: 14px;
   background-color: #ffffff;
+  z-index: 9;
+}
+
+.haircut-info button {
+  background-color: #d94140;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-family: "Sora", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.haircut-info button:hover {
+  background-color: rgb(204.5951965066, 41.7759825328, 40.7048034934);
+}
+.haircut-info button:active {
+  transform: scale(0.97);
+}
+
+@media screen and (max-width: 768px) {
+  .haircuts {
+    flex-direction: column;
+  }
+}
+/* Barber Section */
+.barbeiros {
+  background-color: #ffffff;
+  color: #232224;
+  padding: 54px 14px;
+  text-align: center;
+}
+.barbeiros h2 {
+  font-size: 38px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.barbeiros p {
+  line-height: 1.5;
+  margin-bottom: 40px;
+  max-width: 780px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.cortadores-de-cabelo {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.barber {
+  flex: 0 0 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+.barber:hover {
+  transform: translateY(-5px); /* leve elevação */
+}
+.barber img {
+  width: 180px;
+  height: 230px; /* mais alta que larga */
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 7px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+.barber img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05) contrast(1.03);
+}
+.barber .barber-info {
+  margin-top: 12px; /* fica fora da imagem */
+  text-align: center;
+}
+.barber .barber-info strong {
+  display: block;
+  font-size: 16px;
+  color: #232224;
+  margin-bottom: 2px;
+}
+.barber .barber-info span {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .barber {
+    flex: 0 0 140px;
+  }
+  .barber img {
+    width: 140px;
+    height: 180px;
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+  gap: 24px;
+  color: #ffffff;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-icons a i {
+  transition: transform 0.6s cubic-bezier(0.22, 1.5, 0.36, 1);
+  display: inline-block;
+}
+
+.footer-icons a:hover i {
+  transform: translateY(-8px) scale(1.15);
+  background: linear-gradient(90deg, #d34040, #b42b2b, #d34040);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: redFlower 2s ease-in-out infinite;
+}
+
+@keyframes redFlower {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+img#zap {
+  position: fixed;
+  bottom: 16px;
+  right: 24px;
+  z-index: 99;
+  max-width: 80px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+img#zap:hover {
+  transform: scale(1.15);
+  filter: brightness(1.1);
 }
 
 body {
